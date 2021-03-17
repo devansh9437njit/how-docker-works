@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set up a web server</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand navbar-light bg-dark p-3">
+            <div class="nav navbar-nav">
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="/index.html">Home</a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./virtual.html">
+                    Virtualization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./container.html">
+                    Containerization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./compare.html">
+                    Comparison
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./server.html">
+                    Web Server
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./linux.html">
+                    Linux Commands
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./pycharm.html">
+                    Pycharm
+                </a>
+            </div>
+        </nav>
+
+        <h1 class="display-4 my-4">How To Set Up a Web Server Using Docker</h1>
+        <p class="my-5">In this short tutorail we will learn to set up a web server
+            using Docker by utilizing the "ubuntu" image.
+        </p>
+
+        <p class="my-5">
+            <strong>
+                Step 1 − The first step is to build our Docker File.
+                Let’s use vim and create a Docker File with the following information.
+            </strong>
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            <strong>FROM ubuntu </strong><br>
+            <strong>RUN apt-get update</strong><br>
+            <strong>RUN apt-get install –y apache2</strong><br>
+            <strong>RUN apt-get install –y apache2-utils </strong><br>
+            <strong>RUN apt-get clean </strong><br>
+            <strong>EXPOSE 80 CMD [“apache2ctl”, “-D”, “FOREGROUND”]</strong><br>
+        </div>
+
+
+        <p class="my-5">
+            Now that the file details have been entered, just save the file.
+            <br>
+            <strong>
+                Step 2 − Run the Docker build command to build the Docker file. It can be done using the following
+                command −
+            </strong>
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            <strong>sudo docker build –t=”mywebserver”</strong>
+        </div>
+
+        <p>We are tagging our image as mywebserver.
+            Once the image is built, you will get a successful message that
+            the file has been built.
+        </p>
+
+
+        <p>
+            <strong>
+                Step 3 − Now that the web server file has been built, it’s now time to create a container from the
+                image.
+                We can do this with the Docker run command.
+            </strong>
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            <strong>
+                sudo docker run –d –p 80:80 mywebserver
+            </strong>
+        </div>
+
+        <p>
+            The following points need to be noted about the above command −
+            <br>
+            The port number exposed by the container is 80. Hence with the –p command, we are mapping the same port
+            number to the 80 port number on our localhost.
+            <br>
+            The –d option is used to run the container in detached mode. This is so that the container can run in the
+            background.
+            <br>
+            If you go to port 80 of the Docker host in your web browser, you will now see that Apache is up and running.
+        </p>
+
+
+        <h3>Our server is now working</h3>
+
+        <img src="../images/img6.jpg" width="800px" alt="">
+
+
+
+        <p style="margin-bottom: 200px;"></p>
+
+    </div>
+
+</body>
+
+</html>
