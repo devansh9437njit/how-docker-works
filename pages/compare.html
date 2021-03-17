@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand navbar-light bg-dark p-3">
+            <div class="nav navbar-nav">
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="/index.html">Home</a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./virtual.html">
+                    Virtualization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./container.html">
+                    Containerization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./compare.html">
+                    Comparison
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./server.html">
+                    Web Server
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./linux.html">
+                    Linux Commands
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./pycharm.html">
+                    Pycharm
+                </a>
+            </div>
+        </nav>
+
+        <h1 class="display-4 my-4">Virtualization vs Containerization</h1>
+
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Area</th>
+                <th scope="col">Virtualization</th>
+                <th scope="col">Containerization</th>
+              </tr>
+            </thead>
+            <tbody>
+
+
+
+                
+              <tr class="table-active">
+                <th scope="row">Isolation</th>
+                <td>Provides complete isolation from the host operating system and the other VMs</td>
+                <td>Typically provides lightweight isolation from the host and other containers, but doesn’t provide as strong a security boundary as a VM</td>
+                
+              </tr>
+
+
+
+
+              <tr>
+                <th scope="row">Operating System</th>
+                <td>Runs a complete operating system including the kernel, thus requiring more system resources such as CPU, memory, and storage</td>
+                <td>Runs the user-mode portion of an operating system, and can be tailored to contain just the needed services for your app using fewer system resources</td>
+                
+              </tr>
+
+
+
+
+              <tr class="table-primary">
+                <th scope="row">Guest compatibility</th>
+                <td>Runs just about any operating system inside the virtual machine</td>
+                <td>Runs on the same operating system version as the host</td>
+                
+              </tr>
+
+
+
+              <tr class="table-secondary">
+                <th scope="row">Deployment</th>
+                <td>Deploy individual VMs by using Hypervisor software</td>
+                <td>Deploy individual containers by using Docker or deploy multiple containers by using an orchestrator such as Kubernetes</td>
+                
+              </tr>
+
+
+
+              <tr class="table-success">
+                <th scope="row">Persistent storage</th>
+                <td>Use a Virtual Hard Disk (VHD) for local storage for a single VM or a Server Message Block (SMB) file share for storage shared by multiple servers</td>
+                <td>Use local disks for local storage for a single node or SMB for storage shared by multiple nodes or servers</td>
+                
+              </tr>
+
+
+
+              <tr class="table-danger">
+                <th scope="row">Load balancing</th>
+                <td>Virtual machine load balancing is done by running VMs in other servers in a failover cluster</td>
+                <td>An orchestrator can automatically start or stop containers on cluster nodes to manage changes in load and availability.</td>
+                
+              </tr>
+
+
+
+              <tr class="table-info">
+                <th scope="row">Networking</th>
+                <td>Uses virtual network adapters	</td>
+                <td>Uses an isolated view of a virtual network adapter. Thus, provides a little less virtualization
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+
+
+
+
+          <img src="../images/img5.png" width="900px" alt="">
+
+
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+</body>
+
+</html>
