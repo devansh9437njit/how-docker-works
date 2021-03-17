@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containerization</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand navbar-light bg-dark p-3">
+            <div class="nav navbar-nav">
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="/index.html">Home</a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./virtual.html">
+                    Virtualization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./container.html">
+                    Containerization
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./compare.html">
+                    Comparison
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./server.html">
+                    Web Server
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./linux.html">
+                    Linux Commands
+                </a>
+
+                <a class="btn btn-primary my-2 mx-2 nav-item text-light nav-link active" href="./pycharm.html">
+                    Pycharm
+                </a>
+            </div>
+        </nav>
+
+        <h1 class="display-4 my-4">Log into a Docker container using SSH</h1>
+        <p>
+            <strong>
+                Step 1- Pull an nginx image from Dockerhub
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            sudo docker pull nginx
+        </div>
+
+
+        <p>
+            <strong>
+                Step 2- Run the image
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            sudo docker run ––name nginx–test –d nginx
+        </div>
+
+
+        <p>
+            <strong>
+                Step 3- Verify if the container running
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            sudo docker ps
+        </div>
+
+
+        <p>
+            <strong>
+                Step 4- get access and run commands in that Docker container
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            sudo docker exec –it nginx-test /bin/bash
+        </div>
+
+
+        <p>
+            <strong>
+                Step 5- Get IP address of the container
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            sudo docker inspect -f "{{ .NetworkSettings.IPAddress }}" Container_Name
+        </div>
+        ie 172.17.0.2
+
+
+        <p>
+            <strong>
+                Step 6- SSH Into Docker Container
+            </strong>
+
+        </p>
+
+        <div class="alert alert-dismissible alert-success">
+            ssh root@172.17.0.2
+        </div>
+        <h1>Common Linux Commands</h1>
+        <p>
+            cat [filename] <br> Display file’s contents to the standard output device
+            (usually your monitor).<br>
+            cd /directorypath <br>Change to directory.<br>
+            chmod [options] <br>mode filename Change a file’s permissions.<br>
+            chown [options] <br>filename Change who owns a file.<br>
+            clear<br> Clear a command line screen/window for a fresh start.<br>
+            cp [options]<br> source destination Copy files and directories.<br>
+            date [options]<br> Display or set the system date and time.<br>
+            df [options]<br> Display used and available disk space.<br>
+            du [options] <br>Show how much space each file takes up.<br>
+            file [options] <br>filename Determine what type of data is within a file.<br>
+            find [pathname] <br>[expression] Search for files matching a provided pattern.<br>
+            grep [options]<br> pattern [filesname] Search files or output for a particular pattern.<br>
+            kill [options] <br>pid Stop a process. If the process refuses to stop, use kill -9 pid.<br>
+            less [options] <br>[filename] View the contents of a file one page at a time.<br>
+            ln [options]<br>source [destination] Create a shortcut.<br>
+            locate filename<br> Search a copy of your filesystem for the specified<br>
+            filename.
+        </p>
+
+
+        <p style="margin-bottom: 200px;"></p>
+
+
+    </div>
+
+</body>
+
+</html>
